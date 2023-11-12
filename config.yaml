@@ -13,7 +13,7 @@ arch:
 options:
   sunsynk_user: "your_email"
   sunsynk_pass: "your_sunsynk_password"
-  sunsynk_serial: "2302246241"
+  sunsynk_serial: "2302246242"
   HA_LongLiveToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJiZDBlYmU1Zjg0NTY0MWNmYjE1YjM1ZjE0MjlmNWVkOSIsImlhdCI6MTY5OTc2NDI0MCwiZXhwIjoyMDE1MTI0MjQwfQ.E0UXYrHbbnNc9-ccCGbdY-IgzwMCAAY6pLXTd0uM-To"
   message: "custom things"
   
