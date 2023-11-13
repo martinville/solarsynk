@@ -14,7 +14,7 @@ Click your profile picture situated in the bottom left of your HA user-interface
 ![](https://github.com/martinville/solarsynk/blob/main/longlivetoken.png)
 
 ### Provide your Sunsynk.net credentials
-After installing this add-on make sure you enter all the required information on the configuration page.
+After installing this add-on make sure you enter all the required information on the configuration page. Note if your intentions are to update a Home Assistant installtion with a different IP than the one where this addon is installed, you need to generate the long live token on the Home Assistant instance where entities will be updated.
 
 ![](https://github.com/martinville/solarsynk/blob/main/configuration.png)
 
