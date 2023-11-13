@@ -16,7 +16,6 @@ options:
   sunsynk_serial: ""
   Home_Assistant_IP: ""
   HA_LongLiveToken: ""
-  message: "custom things"
   
 schema:
   sunsynk_user: str
