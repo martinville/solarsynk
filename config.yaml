@@ -1,6 +1,6 @@
 name: "SolarSynk"
 description: "Home Assistant add-on for syncing solar/inverter data from SynSynk.net"
-version: "1.1.0"
+version: "1.1.1"
 slug: "solar_synk"
 init: false
 arch:
@@ -11,16 +11,19 @@ arch:
   - i386
 
 options:
-  sunsynk_user: "your_email"
-  sunsynk_pass: "your_sunsynk_password"
-  sunsynk_serial: "2302246242"
-  HA_LongLiveToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJiZDBlYmU1Zjg0NTY0MWNmYjE1YjM1ZjE0MjlmNWVkOSIsImlhdCI6MTY5OTc2NDI0MCwiZXhwIjoyMDE1MTI0MjQwfQ.E0UXYrHbbnNc9-ccCGbdY-IgzwMCAAY6pLXTd0uM-To"
+  sunsynk_user: ""
+  sunsynk_pass: ""
+  sunsynk_serial: ""
+  Home_Assistant_IP: ""
+  HA_LongLiveToken: ""
   message: "custom things"
   
 schema:
   sunsynk_user: str
   sunsynk_pass: str
   sunsynk_serial: str
+  Home_Assistant_IP: str
   HA_LongLiveToken: str
+  
   
 
