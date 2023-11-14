@@ -16,6 +16,17 @@ Click your profile picture situated in the bottom left of your HA user-interface
 
 ![](https://github.com/martinville/solarsynk/blob/main/longlivetoken.png)
 
+### Add this respository to your Home Assistant add-on store
+From the "Settings" menu item in Home Asstant's UI go to "Add-ons". In the bottom right-jand corner click "ADD-ON STORE". The in the right-hand top corner click the three dots and select "Repositories".
+Paste the following repository link and click add then close https://github.com/martinville/solarsynk
+
+![](https://github.com/martinville/solarsynk/blob/main/addrepo.png)
+
+Refresh the browser. right at the bottom you should now see the "SolarSynk" add-on. Simply click it then click "Install"
+
+![](https://github.com/martinville/solarsynk/blob/main/solarsynkaddon.png)
+
+
 ### Provide your Sunsynk.net credentials
 After installing this add-on make sure you enter all the required information on the configuration page. Note if your intentions are to update a Home Assistant installtion with a different IP than the one where this addon is installed, you need to generate the long live token on the Home Assistant instance where entities will be updated. 
 DO NOT USE localhost or 127.0.0.1 in the IP field, either use the actual IP or hostname.
