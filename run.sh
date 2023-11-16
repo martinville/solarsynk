@@ -92,6 +92,8 @@ day_pv_energy=$(jq -r '.data.etoday' pvindata.json)
 grid_connected_status=$(jq -r '.data.status' griddata.json)
 grid_frequency=$(jq -r '.data.fac' griddata.json)
 grid_power=$(jq -r '.data.vip[0].power' griddata.json)
+grid_voltage=$(jq -r '.data.vip[0].volt' griddata.json)
+grid_current=$(jq -r '.data.vip[0].current' griddata.json)
 inverter_current=$(jq -r '.data.vip[0].current' outputdata.json)
 inverter_frequency=$(jq -r '.data.fac' outputdata.json)
 inverter_power=$(jq -r '.data.vip[0].power' outputdata.json)
@@ -127,6 +129,8 @@ echo "day_pv_energy" $day_pv_energy
 echo "grid_connected_status" $grid_connected_status
 echo "grid_frequency" $grid_frequency
 echo "grid_power" $grid_power
+echo "grid_voltage" $grid_voltage
+echo "grid_current" $grid_current
 echo "inverter_current" $inverter_current
 echo "inverter_frequency" $inverter_frequency
 echo "inverter_power" $inverter_power
@@ -143,6 +147,7 @@ echo "pv2_current" $pv2_current
 echo "pv2_power" $pv2_power
 echo "pv2_voltage" $pv2_voltage
 echo "overall_state" $overall_state
+
 echo ------------------------------------------------------------------------------
 echo "Updating the following sensor entities"
 echo ------------------------------------------------------------------------------
@@ -164,6 +169,8 @@ curl -s -X POST -H "Authorization: Bearer $HA_LongLiveToken" -H "Content-Type: a
 curl -s -X POST -H "Authorization: Bearer $HA_LongLiveToken" -H "Content-Type: application/json" -d '{"attributes": {"unit_of_measurement": "", "friendly_name": "Grid Connection Status"}, "state": "'"$grid_connected_status"'"}' http://$Home_Assistant_IP:8123/api/states/sensor.solarsynk_grid_connected_status | jq -r '.entity_id'
 curl -s -X POST -H "Authorization: Bearer $HA_LongLiveToken" -H "Content-Type: application/json" -d '{"attributes": {"unit_of_measurement": "Hz", "friendly_name": "Grid Freq"}, "state": "'"$grid_frequency"'"}' http://$Home_Assistant_IP:8123/api/states/sensor.solarsynk_grid_frequency | jq -r '.entity_id'
 curl -s -X POST -H "Authorization: Bearer $HA_LongLiveToken" -H "Content-Type: application/json" -d '{"attributes": {"unit_of_measurement": "W", "friendly_name": "Grid Power"}, "state": "'"$grid_power"'"}' http://$Home_Assistant_IP:8123/api/states/sensor.solarsynk_grid_power | jq -r '.entity_id'
+curl -s -X POST -H "Authorization: Bearer $HA_LongLiveToken" -H "Content-Type: application/json" -d '{"attributes": {"unit_of_measurement": "V", "friendly_name": "Grid Voltage"}, "state": "'"$grid_voltage"'"}' http://$Home_Assistant_IP:8123/api/states/sensor.solarsynk_grid_voltage | jq -r '.entity_id'
+curl -s -X POST -H "Authorization: Bearer $HA_LongLiveToken" -H "Content-Type: application/json" -d '{"attributes": {"unit_of_measurement": "A", "friendly_name": "Grid Current"}, "state": "'"$grid_current"'"}' http://$Home_Assistant_IP:8123/api/states/sensor.solarsynk_grid_current | jq -r '.entity_id'
 curl -s -X POST -H "Authorization: Bearer $HA_LongLiveToken" -H "Content-Type: application/json" -d '{"attributes": {"unit_of_measurement": "A", "friendly_name": "Inverter Current"}, "state": "'"$inverter_current"'"}' http://$Home_Assistant_IP:8123/api/states/sensor.solarsynk_inverter_current | jq -r '.entity_id'
 curl -s -X POST -H "Authorization: Bearer $HA_LongLiveToken" -H "Content-Type: application/json" -d '{"attributes": {"unit_of_measurement": "Hz", "friendly_name": "Inverter Freq"}, "state": "'"$inverter_frequency"'"}' http://$Home_Assistant_IP:8123/api/states/sensor.solarsynk_inverter_frequency | jq -r '.entity_id'
 curl -s -X POST -H "Authorization: Bearer $HA_LongLiveToken" -H "Content-Type: application/json" -d '{"attributes": {"unit_of_measurement": "W", "friendly_name": "Inverter Power"}, "state": "'"$inverter_power"'"}' http://$Home_Assistant_IP:8123/api/states/sensor.solarsynk_inverter_power | jq -r '.entity_id'
