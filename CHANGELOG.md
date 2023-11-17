@@ -8,3 +8,18 @@ Updated all energy related entity sensors with correct attributes (Affects all e
 Added 2 more entities, sensor.solarsynk_grid_voltage and sensor.solarsynk_grid_current.
 Updated all entity devices classes except for Battery Capacity, Battery Type, Grid Connection Status and Inverter Overall State (No device class available)
 
+### 2023/11/17
+Added more entities (Will be 0 or null if not available in your setup.
+battery1_voltage, 
+battery1_current, 
+battery1_power, 
+battery1_soc, 
+battery1_temperature, 
+battery1_status, 
+battery2_voltage, 
+battery2_current, 
+battery2_power, 
+battery2_soc, 
+battery2_temperature, 
+battery2_status
+
