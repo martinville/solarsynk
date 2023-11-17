@@ -85,3 +85,4 @@ pv2_current
 pv2_power
 pv2_voltage
 overall_state
+battery1_voltage, battery1_current, battery1_power, battery1_soc, battery1_temperature, battery1_status, battery2_voltage, battery2_current, battery2_power, battery2_soc, battery2_temperature, battery2_status
