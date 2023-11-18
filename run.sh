@@ -31,8 +31,8 @@ echo "Setting user parameters."
 echo "Getting bearer token from solar service provider's API."
 ServerAPIBearerToken=$(curl -s -X POST -H "Content-Type: application/json" https://api.sunsynk.net/oauth/token -d '{"areaCode": "sunsynk","client_id": "csp-web","grant_type": "password","password": "'"$sunsynk_pass"'","source": "sunsynk","username": "'"$sunsynk_user"'"}' | jq -r '.data.access_token')
 echo $ServerAPIBearerToken
-echo "Refresh rate set to:" $Refresh_rate
-echo "Note: Setting the refresh rate lower than the update rate of SunSynk is pointless and will result in wasted disk space."
+echo "Refresh rate set to:" $Refresh_rate "seconds."
+echo "Note: Setting the refresh rate lower than the update rate of SunSynk is pointless and will just result in wasted disk space."
 
 
 echo ""
