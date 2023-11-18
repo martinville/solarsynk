@@ -255,7 +255,7 @@ curl -s -X POST -H "Authorization: Bearer $HA_LongLiveToken" -H "Content-Type: a
 curl -s -X POST -H "Authorization: Bearer $HA_LongLiveToken" -H "Content-Type: application/json" -d '{"attributes": {"unit_of_measurement": "", "friendly_name": "Inverter Overall State"}, "state": "'"$overall_state"'"}' http://$Home_Assistant_IP:8123/api/states/sensor.solarsynk_overall_state | jq -r '.entity_id'
 
 
-echo "All Done! Waiting 5 minutes to rinse and repeat."
+echo "All Done! Waiting " $Refresh_rate " sesonds to rinse and repeat."
 
 
 sleep $Refresh_rate
