@@ -23,3 +23,6 @@ battery2_soc,
 battery2_temperature, 
 battery2_status
 
+### 2023/11/18
+Added setting to change the regresh rate (In seconds) to the configuration screen.
+
