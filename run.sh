@@ -14,6 +14,7 @@ sunsynk_pass="$(bashio::config 'sunsynk_pass')"
 sunsynk_serial="$(bashio::config 'sunsynk_serial')"
 HA_LongLiveToken="$(bashio::config 'HA_LongLiveToken')"
 Home_Assistant_IP="$(bashio::config 'Home_Assistant_IP')"
+Refresh_rate="$(bashio::config 'Refresh_rate')"
 
 ServerAPIBearerToken=""
 SolarInputData=""
@@ -30,6 +31,8 @@ echo "Setting user parameters."
 echo "Getting bearer token from solar service provider's API."
 ServerAPIBearerToken=$(curl -s -X POST -H "Content-Type: application/json" https://api.sunsynk.net/oauth/token -d '{"areaCode": "sunsynk","client_id": "csp-web","grant_type": "password","password": "'"$sunsynk_pass"'","source": "sunsynk","username": "'"$sunsynk_user"'"}' | jq -r '.data.access_token')
 echo $ServerAPIBearerToken
+echo "Refresh rate set to:" $Refresh_rate
+
 
 echo ""
 echo "Cleaning up old data."
@@ -254,5 +257,5 @@ curl -s -X POST -H "Authorization: Bearer $HA_LongLiveToken" -H "Content-Type: a
 echo "All Done! Waiting 5 minutes to rinse and repeat."
 
 
-sleep 300
+sleep $Refresh_rate
 done
