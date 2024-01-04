@@ -3,6 +3,15 @@ https://github.com/martinville/solarsynkv2
 
 
 
+
+
+
+
+
+
+
+
+
 ![](https://github.com/martinville/solarsynk/blob/main/logo.png)
 
 ## How it works
