@@ -1,5 +1,4 @@
-# NOTICE: This repository is no longer updated and has been moved to 
-
+# NOTICE: This repository has been abandoned!
 https://github.com/martinville/solarsynkv2
 
 
