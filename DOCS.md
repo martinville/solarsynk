@@ -1,3 +1,9 @@
+## NOTICE: This repository is no longer updated and has been moved to 
+
+https://github.com/martinville/solarsynkv2
+
+
+
 ![](https://github.com/martinville/solarsynk/blob/main/logo.png)
 
 ## How it works
